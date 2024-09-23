@@ -1,0 +1,47 @@
+html {
+  font-size: 10px;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 1.4rem;
+  color: #333;
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+a,
+a:hover {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+ul,
+li,
+ol {
+  padding-left: 30px;
+}
+
+/* CSS để tùy chỉnh kiểu hiển thị của chú thích */
+.wp-caption-text {
+  font-size: 14px;
+  font-style: italic;
+  text-align: center;
+}
+
+.menu {
+  display: flex;
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+}
