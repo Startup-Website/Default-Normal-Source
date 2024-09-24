@@ -6,4 +6,3 @@
 get_header();
 get_template_part('sections/menu-main');
 get_footer();
-?>
