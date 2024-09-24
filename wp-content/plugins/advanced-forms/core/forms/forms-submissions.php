@@ -284,7 +284,6 @@ class AF_Core_Forms_Submissions {
 		$form_key_or_id = $_POST['af_form'];
 
 		$form = af_get_form( $form_key_or_id );
-
 		if ( ! $form ) {
 			return false;
 		}
@@ -302,18 +301,30 @@ class AF_Core_Forms_Submissions {
 			exit;
 		}
 
-		// Retrieve all form fields and their values
-		$fields = array();
-
+		// Retrieve all form fields and load their submitted values onto the field array.
+		$fields = [];
 		if ( isset( $_POST['acf'] ) ) {
 			foreach ( $_POST['acf'] as $k => $value ) {
 				$field = acf_get_field( $k );
-
 				if ( empty( $field ) ) {
 					continue;
 				}
 
+				/**
+				 * Filter the raw submitted value before it is formatted by ACF.
+				 *
+				 * This is useful for modifying the value submitted by the user. Note that this filter runs before
+				 * validation so it will affect any custom validation rules you have set up using the af/form/validate
+				 * filters.
+				 *
+				 * @since 1.9.3.4
+				 */
+				$value = apply_filters( 'af/form/submission/value', $value, $field, $form, $args );
+
+				// Set the raw submitted value under the `_input` key.
 				$field['_input'] = $value;
+
+				// Format the value and set the formatted value under the `value` key.
 				$field['value'] = acf_format_value( $value, 0, $field );
 
 				$fields[] = $field;
@@ -449,7 +460,7 @@ class AF_Core_Forms_Submissions {
 	 * The errors checks should in the future be implemented client-side for a good user experience and this is mostly meant to be a fallback.
 	 *
 	 *
-	 * @since 1.7.0
+	 * @since 1.7.0
 	 *
 	 */
 	private function handle_upload_errors() {

@@ -3,12 +3,13 @@
  * Plugin Name: Advanced Forms
  * Plugin URI: https://wordpress.org/plugins/advanced-forms/
  * Description: Flexible and developer-friendly forms with the power of Advanced Custom Fields.
- * Version: 1.9.3.2
+ * Version: 1.9.3.6
  * Author: Phil Kurth (Hookturn)
  * Author URI: http://hookturn.io
  * Copyright: Hookturn Digital
  * Text Domain: advanced-forms
  * Domain Path: /language
+ * Requires PHP: 7.1
  */
 
 if ( ! class_exists( 'AF' ) ) :
@@ -20,7 +21,7 @@ if ( ! class_exists( 'AF' ) ) :
 		 *
 		 * @since 1.2.0
 		 */
-		public $version = '1.9.3.2';
+		public $version = '1.9.3.6';
 
 		/**
 		 * Array to hold data about the previous submission
@@ -158,7 +159,10 @@ if ( ! class_exists( 'AF' ) ) :
 		 */
 		function missing_acf_notice() {
 			if ( ! $this->has_acf() ) {
-				echo sprintf( '<div class="notice notice-error is-dismissible"><p>%s</p></div>', 'Couldn\'t find ACF 5 PRO. Advanced Forms requires ACF 5 PRO to function correctly.' );
+				echo sprintf(
+					'<div class="notice notice-error is-dismissible"><p>%s</p></div>',
+					__( "Couldn't find ACF PRO. Advanced Forms requires the PRO version of ACF (version 5 or greater) to function.", 'advanced-forms' )
+				);
 			}
 		}
 

@@ -9,11 +9,15 @@ function tp_custom_logo()
             box-shadow: none !important;
         }
 
+        a {
+            text-decoration: none;
+        }
+
         body.login {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            background-color: #313740;
+            background: linear-gradient(90deg, rgba(23, 27, 98, 1) 0%, rgba(87, 30, 193, 1) 35%, rgba(22, 169, 186, 1) 100%);
             padding-right: 15px;
             padding-left: 15px;
             margin-right: auto;
@@ -21,18 +25,18 @@ function tp_custom_logo()
             width: 1170px;
         }
 
-        body.login > #login-left {
+        body.login>#login-left {
             width: 35% !important;
             margin: auto 0 !important;
             height: max-content;
-            background-image: url(<?php echo get_template_directory_uri() . '/images/bg-logo-epal.svg'; ?>);
+            background-image: url(<?php echo get_template_directory_uri() . '/images/sw-logo.svg'; ?>);
             background-repeat: no-repeat;
             background-size: contain;
             background-position: top;
             padding: 80px;
         }
 
-        body.login > div#login {
+        body.login>div#login {
             width: 30% !important;
             margin: auto 30px !important;
             background-color: #fff;
@@ -41,18 +45,18 @@ function tp_custom_logo()
             padding: 15px 0 0;
         }
 
-        body.login > div#login h1 {
+        body.login>div#login h1 {
             display: none;
         }
 
-        body.login > div#login form {
+        body.login>div#login form {
             margin: 0;
             padding: 40px 25px 0;
             border: none;
             position: relative;
         }
 
-        body.login > div#login form:before {
+        body.login>div#login form:before {
             content: 'Vào Quản Trị';
             position: absolute;
             font-size: 24px;
@@ -61,22 +65,22 @@ function tp_custom_logo()
             transform: translateX(-50%);
         }
 
-        body.login > div#login form p:first-child input {
+        body.login>div#login form p:first-child input {
             border-radius: 20px;
             padding: 0 15px;
         }
 
-        body.login > div#login form .user-pass-wrap .wp-pwd input {
+        body.login>div#login form .user-pass-wrap .wp-pwd input {
             border-radius: 20px;
             padding: 0 15px;
         }
 
-        body.login > div#login form p.forgetmenot {
+        body.login>div#login form p.forgetmenot {
             width: 100%;
             margin: 0px 0px 15px;
         }
 
-        body.login > div#login form p.submit input {
+        body.login>div#login form p.submit input {
             width: 100%;
             height: 40px;
             background: #1abc9c;
@@ -86,19 +90,27 @@ function tp_custom_logo()
             text-shadow: none;
         }
 
-        body.login > div#login p:first-child {
+        body.login>div#login p:first-child {
             text-align: left;
         }
 
-        body.login > div#login p {
+        body.login>div#login p {
             text-align: center;
         }
 
 
         #login-left .logo {
-            width: 200px;
-            height: 40px;
-            margin: 0 auto 30px;
+            margin: 0 auto 15px;
+        }
+
+        #login-left .logo a {
+            color: #fff;
+            font-size: 14px;
+            opacity: 0.6;
+            letter-spacing: 1px;
+            font-weight: 300;
+            margin: 15px 0;
+            text-align: justify;
         }
 
         #login-left .content-login-left {
@@ -171,7 +183,8 @@ function tp_custom_logo()
             outline: none;
         }
 
-        .submit input:hover, a:hover {
+        .submit input:hover,
+        a:hover {
             opacity: 0.8;
         }
 
@@ -201,11 +214,11 @@ function tp_custom_logo()
                 margin: 20px auto;
             }
 
-            body.login > #login-left {
+            body.login>#login-left {
                 width: 40% !important;
             }
 
-            body.login > div#login {
+            body.login>div#login {
                 width: 35% !important;
             }
         }
@@ -215,12 +228,12 @@ function tp_custom_logo()
                 width: 750px;
             }
 
-            body.login > div#login {
+            body.login>div#login {
                 width: 40% !important;
                 margin: auto 15px !important;
             }
 
-            body.login > #login-left {
+            body.login>#login-left {
                 width: 45% !important;
                 margin: auto 0 !important;
                 padding: 30px 30px 10px;
@@ -244,53 +257,52 @@ function tp_custom_logo()
                 flex-direction: column-reverse;
             }
 
-            body.login > #login-left {
+            body.login>#login-left {
                 width: 60% !important;
                 margin: 10px auto 0 !important;
             }
 
-            body.login > div#login {
+            body.login>div#login {
                 width: 50% !important;
                 margin: 0 auto 20px !important;
             }
         }
 
         @media screen and (max-width: 575px) {
-            body.login > #login-left {
+            body.login>#login-left {
                 width: 80% !important;
             }
 
-            body.login > div#login {
+            body.login>div#login {
                 width: 60% !important;
             }
         }
 
         @media screen and (max-width: 450px) {
-            body.login > div#login {
+            body.login>div#login {
                 width: 70% !important;
             }
         }
-
     </style>
     <div id="login-left">
-        <div class="logo">
-            <a href="https://epal.vn">
-                <img src="<?php echo get_template_directory_uri() . '/images/logo-epal.svg'; ?>"
-                     alt="logo Epal Solution">
+        <div class="logo" style="overflow: hidden">
+            <a href="#" style="display: flex; align-items:center;">
+                <img style="width:150px; height: 40px; object-fit: cover;"
+                    src="<?php echo get_template_directory_uri() . '/images/sw-no-bg.png'; ?>">
+                <span>STARTUP WEBSITE</span>
             </a>
         </div>
         <div class="content-login-left">
             <div class="login-name-ver">
                 <div class="name">
-                    EPAL WP CMS
+                    SW WP CMS
                 </div>
                 <div class="ver">
-                    ver 6.0.261109
+                    ver 7.0.0
                 </div>
             </div>
             <div class="description">
-                Đăng nhập quản trị website chuyên nghiệp trên nền tảng CMS Wordpress, Được xây dựng bởi EPAL Solution
-                Corp.
+                Đăng nhập quản trị website chuyên nghiệp trên nền tảng CMS Wordpress, Được xây dựng bởi Startup Website.
             </div>
             <div class="epal-support">
                 <ul>
@@ -299,75 +311,7 @@ function tp_custom_logo()
                             Liên Hệ
                         </a>
                     </li>
-                    <li>
-                        <a href="https://epal.vn/gioi-thieu/" target="_blank">
-                            Giới Thiệu
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://epal.vn/tai-lieu-huong-dan/" target="_blank">
-                            Hỗ Trợ & Hướng Dẫn
-                        </a>
-                    </li>
                 </ul>
-            </div>
-            <div class="social">
-                <ul>
-                    <li>
-                        <a href="https://epal.vn/" target="_blank">
-                            <img src="<?php echo get_template_directory_uri() . '/images/chrome.svg' ?>" alt="chrome">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.facebook.com/epalsolution" target="_blank">
-                            <img src="<?php echo get_template_directory_uri() . '/images/fb.svg'; ?>" alt="facebook">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://twitter.com/EPALSolution" target="_blank">
-                            <img src="<?php echo get_template_directory_uri() . '/images/twitter.svg'; ?>"
-                                 alt="twitter">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.instagram.com/epal.solution/" target="_blank">
-                            <img src="<?php echo get_template_directory_uri() . '/images/instagram.svg'; ?>"
-                                 alt="instagram">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.youtube.com/channel/UCkUFnop2O-oUPSl41ON_tUg" target="_blank">
-                            <img src="<?php echo get_template_directory_uri() . '/images/youtube.svg' ?>" alt="youtube">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.linkedin.com/in/epal-solution-corporation/" target="_blank">
-                            <img src="<?php echo get_template_directory_uri() . '/images/linkedin.svg' ?>"
-                                 alt="linkedin">
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <div class="logo-epal-bottom">
-                <a href="https://epal.vn/">
-                    <img src="<?php echo get_template_directory_uri() . '/images/logo-epal.svg' ?>" alt="logo-epal">
-                </a>
-                <a href="https://halozendsoft.com/">
-                    <img src="<?php echo get_template_directory_uri() . '/images/Logo-Halozend.svg' ?>"
-                         alt="logo-halozend">
-                </a>
-                <a href="https://blog.epal.vn/">
-                    <img src="<?php echo get_template_directory_uri() . '/images/logo-blog-epal.svg' ?>"
-                         alt="logo-blog-epal">
-                </a>
-                <a href="https://epalshop.com/">
-                    <img src="<?php echo get_template_directory_uri() . '/images/logo-epal-shop.svg' ?>"
-                         alt="logo-epal-shop">
-                </a>
-                <a href="http://mecloud.com.vn/">
-                    <img src="<?php echo get_template_directory_uri() . '/images/logo-mecloud.png' ?>"
-                         alt="logo-mecloud">
-                </a>
             </div>
         </div>
     </div>
